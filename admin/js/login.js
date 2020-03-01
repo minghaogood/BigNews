@@ -6,7 +6,8 @@ e.preventDefault();
 const user= $('.input_txt').val().trim();
 const pwd= $('.input_pass').val().trim();
 if(user == '' || pwd == ''){
-  alert('空');
+  $('.modal').modal();
+  $('.modal-body p').html('账号密码不能为空');
 }else{
   // 发送ajax
   $.ajax({
@@ -18,8 +19,14 @@ if(user == '' || pwd == ''){
     },
     dataType: "json",
     success: function (response) {
-      console.log(response);
-      
+      // 登录成功返回200
+      if(response.code==200){
+        localStorage.setItem('token',response.token);
+        location.href = '../admin/index.html';
+      }else{
+        $('.modal').modal();
+        $('.modal-body p').html(response.msg);
+      }
     }
   });
 }
