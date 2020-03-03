@@ -2,7 +2,7 @@ $(function(){
   // 用户信息功能
   $.ajax({
     type: "get",
-    url: "http://localhost:8080/api/v1/admin/user/info",
+    url: BigNew.user_info,
     dataType: "json",
     success: function (response) {
       if(response.code ==200){

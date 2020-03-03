@@ -1,4 +1,4 @@
-(function(){
+(function(w){
 $.ajaxSetup({
     // 全局添加请求头
     headers:{
@@ -11,4 +11,9 @@ $.ajaxSetup({
     }
 });
 
+const baseUrl = 'http://localhost:8080/api/v1';
+const BigNew = {
+    user_info:`${baseUrl}/admin/user/info`
+}
+w.BigNew = BigNew;
 })(window);
