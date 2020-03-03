@@ -6,7 +6,8 @@ $.ajaxSetup({
     },
     // 没有token自动跳转登录页
     error:function(){
-        location.href='./login.html'
+        $('.modal').modal();
+        $('.modal-body p').html('请重新登录');        
     }
 });
 
