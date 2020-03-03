@@ -3,9 +3,6 @@ $(function(){
   $.ajax({
     type: "get",
     url: "http://localhost:8080/api/v1/admin/user/info",
-    headers:{
-      Authorization: localStorage.getItem('token')
-    },
     dataType: "json",
     success: function (response) {
       if(response.code ==200){
