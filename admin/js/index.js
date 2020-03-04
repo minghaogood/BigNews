@@ -22,19 +22,19 @@ $(function(){
 
   // 点击左侧选项卡高亮
   $('.level01').click(function (e) { 
-    e.preventDefault();
     $(this).addClass('active').siblings().removeClass('active');
     // 文章选项卡处理
     if($(this).next().hasClass('level02')){
       $(this).next().slideToggle();
       $(this).find('b').toggleClass('rotate0');
       $(this).next().find('li').eq(0).addClass('active');
+    }else{
+      $('.level02 li').removeClass('active');
     }
   });
 
   // 文章二级选项卡处理
   $('.level02 li').click(function (e) { 
-    e.preventDefault();
     $(this).addClass('active').siblings().removeClass('active');
   });
 
