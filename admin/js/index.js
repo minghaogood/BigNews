@@ -20,7 +20,5 @@ $(function(){
   location.href='../admin/login.html';
   });
 
-  $('.toLogin').click(function(){
-    location.href="./login.html";
-})
+  
 });

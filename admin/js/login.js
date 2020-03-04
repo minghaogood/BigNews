@@ -12,7 +12,7 @@ if(user == '' || pwd == ''){
   // 发送ajax
   $.ajax({
     type: "post",
-    url: "http://localhost:8080/api/v1/admin/user/login",
+    url: BigNew.user_login,
     data: {
       username: user,
       password: pwd,
